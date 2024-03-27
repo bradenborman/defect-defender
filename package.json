@@ -20,8 +20,7 @@
     },
     "scripts": {
         "start": "webpack serve --mode development --open",
-        "build": "webpack --mode production",
-        "heroku-postbuild": "npm run build"
+        "build": "webpack --mode production"
     },
     "eslintConfig": {
         "extends": [
