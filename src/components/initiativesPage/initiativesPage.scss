@@ -1,0 +1,163 @@
+.issue-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; // Space between each card
+    padding: 20px;
+
+
+    .card {
+        position: relative; // Add relative positioning to the card
+        background-color: #f3f3f3; // Card background color
+        border-radius: 5px;
+        padding: 20px;
+        border: 1px solid rgb(92, 92, 92);
+        box-shadow: 0 4px 6px hwb(240 59% 17% / 0.377); // Card shadow
+        transition: all 0.2s;
+
+        &.resolved {
+
+            .resolved-icon {
+                position: absolute;
+                left: 1px;
+                top: 1px;
+                font-size: 32px;
+                color: green;
+                transform: translate(-30%, -30%);
+                z-index: 99;
+                background-color: white;
+            }
+
+        }
+
+        &:hover {
+            box-shadow: 0 6px 10px hwb(240 38% 0% / 0.377); // Increase shadow on hover
+        }
+
+        .heading {
+            cursor: pointer;
+
+            .collapse-button {
+                background: none;
+                border: none;
+                padding: 0;
+                margin-right: 10px;
+                cursor: pointer;
+                outline: none;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            .title {
+                position: relative;
+                display: inline-block;
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-size: 22px;
+                text-align: center;
+                transition: all 0.2s;
+
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 66%;
+                    height: 2px;
+                    background-color: rgba(0, 76, 168, 0.295);
+                    transition: width 0.1s; // Add transition here
+                }
+
+                &::before {
+                    top: -5px;
+                }
+
+                &::after {
+                    bottom: -5px;
+                }
+
+
+            }
+
+            &:hover {
+                .title {
+
+                    &::after,
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+        .reported-by {
+            margin-left: 10px;
+            font-size: .9em;
+        }
+
+        .due-date {
+            position: absolute;
+            top: 10px; // Adjust top position as needed
+            right: 10px; // Adjust right position as needed
+            font-size: 14px; // Adjust font size as needed
+
+            span {
+                color: red;
+                font-weight: bold;
+            }
+
+        }
+
+        .description,
+        .expected-results,
+        .name,
+        .comments {
+            margin-top: 15px;
+            font-size: 16px;
+
+            &:first-child {
+                margin-top: 0; // Remove top margin for the first field
+            }
+        }
+
+        .action-buttons {
+
+            display: flex;
+            justify-content: center; // Align buttons in the center horizontally
+            margin: 50px 0px 20px 0px;
+
+            button {
+                padding: 10px 20px;
+                margin-right: 10px;
+                background-color: #007bff; // Button background color
+                color: #fff; // Button text color
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #0056b3; // Darker background color on hover
+                }
+            }
+        }
+
+
+
+        .comments {
+            margin-top: 50px;
+
+            ul {
+                padding-left: 20px;
+                list-style-type: disc;
+            }
+        }
+
+    }
+
+
+}

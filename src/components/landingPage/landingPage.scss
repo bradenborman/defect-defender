@@ -1,0 +1,45 @@
+.landing-page-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    font-size: 24px;
+
+    .card {
+        font-family: "Noto Sans", sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #eeeeee;
+        background-image: linear-gradient(to right, #eeeeee, #e0e0e0);
+        box-shadow: 2px 2px #3E78B2;
+        cursor: pointer;
+
+        &:hover {
+            background-color: hsla(0, 0%, 93%, 0.521);
+        }
+
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+
+        &.double-length {
+            grid-column: span 3;
+        }
+
+        &.normal-length {
+            grid-column: span 1;
+        }
+
+
+        &:nth-child(n+2) {
+            grid-row: 2;
+        }
+    }
+
+}
